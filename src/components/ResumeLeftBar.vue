@@ -8,40 +8,15 @@
     </span>
     <nav>
       <ul>
-        <li>
+        <li
+          v-for="i in [0,1,2,3,4,5]"
+          v-bind:class="{active: currentTab === i}"
+          v-on:click="currentTab = i"
+        >
           <svg class="icon">
-            <use xlink:href="#icon-information" />
-          </svg>Information
-        </li>
-
-        <li>
-          <svg class="icon">
-            <use xlink:href="#icon-company" />
-          </svg>Company
-        </li>
-
-        <li>
-          <svg class="icon">
-            <use xlink:href="#icon-school" />
-          </svg>School
-        </li>
-
-        <li>
-          <svg class="icon">
-            <use xlink:href="#icon-project-copy" />
-          </svg>Project
-        </li>
-
-        <li>
-          <svg class="icon">
-            <use xlink:href="#icon-award" />
-          </svg>Award
-        </li>
-
-        <li>
-          <svg class="icon">
-            <use xlink:href="#icon-contact" />
-          </svg>Contact
+            <use v-bind:xlink:href="`#icon-${icons[i]}`" />
+          </svg>{{icons[i]}}
+          <span class="triangle"></span>
         </li>
       </ul>
     </nav>
@@ -50,7 +25,20 @@
 
 <script>
 export default {
-  name: "ResumeLeftBar"
+  name: "ResumeLeftBar",
+  data() {
+    return {
+      currentTab: 0,
+      icons: [
+        "information",
+        "company",
+        "school",
+        "project",
+        "award",
+        "contact"
+      ]
+    };
+  }
 };
 </script>
 
@@ -70,15 +58,34 @@ export default {
       li {
         list-style: none;
         text-align: center;
-        padding: 40px 0;
+        padding: 48px 0;
         margin-top: 24px;
         vertical-align: baseline;
         position: relative;
-        svg {
+        .icon {
           font-size: 24px;
           position: absolute;
-          top: 0;
+          top: 15px;
           left: 100px;
+        }
+      }
+      .active {
+        background: #f6fafd;
+        color: #54a19b;
+        font-weight: bold;
+        .icon {
+          fill: #54a19b;
+        }
+        .triangle {
+          width: 0;
+          height: 0;
+          border-top: 12px solid transparent;
+          border-right: 12px solid #1a9285;
+          border-bottom: 12px solid #1a9285;
+          border-left: 12px solid transparent;
+          position: absolute;
+          bottom: 0;
+          right: 0;
         }
       }
     }

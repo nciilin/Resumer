@@ -1,11 +1,12 @@
 <template>
   <div class="ResumeEditor">
     <ul>
-      <li>tab1</li>
-      <li>tab2</li>
-      <li>tab3</li>
-      <li>tab4</li>
-      <li>tab5</li>
+      <li v-bind:class="{active: currentTab === 0}">tab1</li>
+      <li v-bind:class="{active: currentTab === 1}">tab2</li>
+      <li v-bind:class="{active: currentTab === 2}">tab3</li>
+      <li v-bind:class="{active: currentTab === 3}">tab4</li>
+      <li v-bind:class="{active: currentTab === 4}">tab5</li>
+      <li v-bind:class="{active: currentTab === 5}">tab6</li>
     </ul>
   </div>
 </template>
