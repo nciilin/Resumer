@@ -7,8 +7,6 @@
       <ResumeSearch />
     </main>
     <footer>
-      <h3>View Job</h3>
-      <ResumeEditor />
       <ResumePreview />
     </footer>
   </div>
@@ -45,7 +43,7 @@ export default {
 .page {
   font-family: 12px/1.5 Tahoma, Helvetica, Arial, "宋体", sans-serif;
   header {
-    width: 15%;
+    max-width: 15%;
     float: left;
   }
   main {

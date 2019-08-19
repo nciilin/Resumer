@@ -6,7 +6,7 @@
       </svg>
       Resumer
     </span>
-    <nav>
+    <nav class="clearfix">
       <ul>
         <li
           v-for="i in [0,1,2,3,4,5]"
@@ -15,10 +15,16 @@
         >
           <svg class="icon">
             <use v-bind:xlink:href="`#icon-${icons[i]}`" />
-          </svg>{{icons[i]}}
+          </svg>
+          {{icons[i]}}
           <span class="triangle"></span>
         </li>
       </ul>
+      <ol class="panes">
+        <li v-for="i in [0,1,2,3,4,5]"
+         v-bind:class="{active: currentTab === i}">tab{{i + 1}}</li>
+       
+      </ol>
     </nav>
   </div>
 </template>
@@ -29,20 +35,18 @@ export default {
   data() {
     return {
       currentTab: 0,
-      icons: [
-        "information",
-        "company",
-        "school",
-        "project",
-        "award",
-        "contact"
-      ]
+      icons: ["information", "company", "school", "project", "award", "contact"]
     };
   }
 };
 </script>
 
 <style lang="scss">
+.clearfix {
+  content: "";
+  display: block;
+  clear: both;
+}
 .wrapper {
   box-shadow: 10px 7px 6px 0px rgba(242, 242, 242, 0.84);
   margin-top: 24px;
@@ -87,6 +91,22 @@ export default {
           bottom: 0;
           right: 0;
         }
+      }
+    }
+  }
+  .panes {
+    float: left;
+    margin-left: 238px;
+    margin-top: -830px;
+    width: 420px;
+    height: 400px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+    li {
+      list-style: none;
+      display: none;
+      &.active {
+        display: block;
       }
     }
   }

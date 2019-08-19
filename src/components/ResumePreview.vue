@@ -19,11 +19,11 @@ export default {
 <style lang="scss">
 .ResumePreview {
   ul {
-    margin-left: 50%;
-    margin-top: 30px;
-    border: 1px solid red;
+    margin-left: 40%;
+    margin-top: 45px;
+    height: 400px;
     background: #ffffff;
-    height: 680px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
     li {
       list-style: none;
     }
