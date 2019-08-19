@@ -80,6 +80,13 @@ export default {
         left: 0;
       }
     }
+    button:hover {
+      background: #416aa6;
+      color: #fff;
+      svg {
+        fill: #fff;
+      }
+    }
     .registered,
     .login,
     .save,
@@ -92,22 +99,12 @@ export default {
     }
     .login {
       margin-right: 210px;
-      background: #416aa6;
-      color: #fff;
-      svg {
-        fill: #fff;
-      }
     }
     .save {
       margin-right: 110px;
     }
     .preview {
       margin-right: 20px;
-      background: #416aa6;
-      color: #fff;
-      svg {
-        fill: #fff;
-      }
     }
   }
 }

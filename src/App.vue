@@ -18,12 +18,11 @@ import "./assets/reset.css";
 import ResumeLeftBar from "./components/ResumeLeftBar";
 import ResumeSearch from "./components/ResumeSearch";
 import DisplayBoard from "./components/DisplayBoard";
-import ResumeEditor from "./components/ResumeEditor";
 import ResumePreview from "./components/ResumePreview";
 
 export default {
   name: "App",
-  components: { ResumeLeftBar, ResumeSearch,DisplayBoard, ResumeEditor, ResumePreview }
+  components: { ResumeLeftBar, ResumeSearch,DisplayBoard, ResumePreview }
 };
 </script>
 
