@@ -2,21 +2,24 @@
   <div>
     <h2>学习经历</h2>
     <el-form>
-      <div class="container" v-for="(study, index) in education">
+      <div class="container" v-for="(item, index) in education">
         <el-form-item label="学校">
-          <el-input v-model="study.school"></el-input>
+          <el-input v-model="item.school"></el-input>
         </el-form-item>
-        <el-form-item label="内容">
-          <el-input v-model="study.content"></el-input>
+        <el-form-item label="学位">
+          <el-input v-model="item.degree"></el-input>
         </el-form-item>
-        <button class="remove" v-on:click="removeStudyHistory(index)">
+        <el-form-item label="时间">
+          <el-input v-model="item.duration"></el-input>
+        </el-form-item>
+        <button class="remove" v-on:click="removeItem(index)">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-Remove" />
           </svg>
         </button>
         <hr />
       </div>
-      <button class="add" v-on:click="addStudyHistory">
+      <button class="add" v-on:click="addItem">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-add" />
         </svg>
@@ -29,13 +32,14 @@
 export default {
   props: ["education"],
   methods: {
-    addStudyHistory() {
+    addItem() {
       this.education.push({
         school: "",
-        content: ""
+        degree: "",
+        duration: ""
       });
     },
-    removeStudyHistory(index) {
+    removeItem(index) {
       this.education.splice(index, 1);
     }
   }

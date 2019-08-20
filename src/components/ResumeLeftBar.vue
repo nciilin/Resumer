@@ -22,22 +22,22 @@
       </ul>
       <ol class="panes">
         <li v-bind:class="{active: currentTab === 0 }">
-          <ProfileEditor v-bind:profile="profile" />
+          <ProfileEditor v-bind:profile="resume.profile" />
         </li>
         <li v-bind:class="{active: currentTab === 1 }">
-          <WorkHistoryEditor v-bind:workHistory="workHistory" />
+          <WorkHistoryEditor v-bind:workHistory="resume.workHistory" />
         </li>
         <li v-bind:class="{active: currentTab === 2 }">
-          <EducationEditor v-bind:education="education" />
+          <EducationEditor v-bind:education="resume.education" />
         </li>
         <li v-bind:class="{active: currentTab === 3 }">
-          <ProjectEditor v-bind:projects="projects" />
+          <ProjectEditor v-bind:projects="resume.projects" />
         </li>
         <li v-bind:class="{active: currentTab === 4 }">
-          <AwardEditor v-bind:awards="awards" />
+          <AwardEditor v-bind:awards="resume.awards" />
         </li>
         <li v-bind:class="{active: currentTab === 5 }">
-         <ContactEditor v-bind:contacts="contacts" />
+         <ContactEditor v-bind:contacts="resume.contacts" />
         </li>
       </ol>
     </nav>
@@ -54,6 +54,7 @@ import ContactEditor from './ContactEditor'
 
 export default {
   name: "ResumeLeftBar",
+  props: ['resume'],
   components: {
     ProfileEditor,
     WorkHistoryEditor,
@@ -72,17 +73,7 @@ export default {
         "project",
         "award",
         "contact"
-      ],
-      profile: {
-        name: "",
-        city: "",
-        birth: ""
-      },
-      workHistory: [{ company: "", content: "" }],
-      education: [{ school: "", content: "" }],
-      projects: [{ name: "", content: "" }],
-      awards: [{ name: "", content: "" }],
-      contacts: [{ contact: "", content: "" }]
+      ]
     };
   },
   methods: {

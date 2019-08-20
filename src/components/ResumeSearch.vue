@@ -22,7 +22,7 @@
           <use xlink:href="#icon-Save" />
         </svg>保存
       </button>
-      <button class="preview">
+      <button class="preview" v-on:click="preview">
         <svg class="icon">
           <use xlink:href="#icon-plus-preview" />
         </svg>预览
@@ -34,8 +34,10 @@
 <script>
 export default {
   name: "ResumeSearch",
-  data() {
-    return {};
+  methods: {
+    preview() {
+      this.$emit('preview')
+    }
   }
 };
 </script>
@@ -83,6 +85,7 @@ export default {
     button:hover {
       background: #416aa6;
       color: #fff;
+      cursor: pointer;
       svg {
         fill: #fff;
       }
