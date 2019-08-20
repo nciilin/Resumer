@@ -31,11 +31,11 @@ export default {
       previewMode: false,
       resume: {
         profile: { name: "", city: "", birth: "" },
-        workHistory: [{ company: "", content: "" }],
-        education: [{ school: "", degree: "", duration: "" }],
-        projects: [{ name: "", content: "" }],
-        awards: [{ name: "", content: "" }],
-        contacts: [{ contact: "", content: "" }]
+        workHistory: [{ company: "喜羊羊联盟", content: "吃喝玩乐" }],
+        education: [{ school: "羊羊村", degree: "大长老", duration: "2XXX" }],
+        projects: [{ name: "反击战", content: "对抗灰太狼" }],
+        awards: [{ name: "儿童动画收视冠军", content: "00后大概都看过" }],
+        contacts: [{ phone: "12333XXXXX", email: "67412@qq.com" }]
       }
     };
   },
@@ -77,18 +77,13 @@ export default {
     margin-top: 16px;
   }
 }
-
 .previewMode > #leftBar {
   display: none;
 }
 .previewMode #search {
   display: none;
 }
-.previewMode #preview {
-  max-width: 800px;
-  margin: 40px 400px;
-  background: #ddd;
-}
+
 #exitPreview {
   display: none;
   width: 84px;

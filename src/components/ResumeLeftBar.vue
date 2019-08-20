@@ -37,7 +37,7 @@
           <AwardEditor v-bind:awards="resume.awards" />
         </li>
         <li v-bind:class="{active: currentTab === 5 }">
-         <ContactEditor v-bind:contacts="resume.contacts" />
+          <ContactEditor v-bind:contacts="resume.contacts" />
         </li>
       </ol>
     </nav>
@@ -50,11 +50,11 @@ import WorkHistoryEditor from "./WorkHistoryEditor";
 import EducationEditor from "./EducationEditor";
 import ProjectEditor from "./ProjectEditor";
 import AwardEditor from "./AwardEditor";
-import ContactEditor from './ContactEditor'
+import ContactEditor from "./ContactEditor";
 
 export default {
   name: "ResumeLeftBar",
-  props: ['resume'],
+  props: ["resume"],
   components: {
     ProfileEditor,
     WorkHistoryEditor,
@@ -66,18 +66,10 @@ export default {
   data() {
     return {
       currentTab: 0,
-      icons: [
-        "information",
-        "company",
-        "school",
-        "project",
-        "award",
-        "contact"
-      ]
+      icons: ["information", "company", "school", "project", "award", "contact"]
     };
   },
-  methods: {
-  }
+  methods: {}
 };
 </script>
 

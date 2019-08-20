@@ -2,12 +2,12 @@
   <div>
     <h2>联系方式</h2>
     <el-form>
-      <div class="container" v-for="(contactMessage, index) in contacts">
+      <div class="container" v-for="(contact, index) in contacts">
         <el-form-item label="手机">
-          <el-input v-model="contactMessage.contact"></el-input>
+          <el-input v-model="contact.phone"></el-input>
         </el-form-item>
         <el-form-item label="邮箱">
-          <el-input v-model="contactMessage.content"></el-input>
+          <el-input v-model="contact.email"></el-input>
         </el-form-item>
         <button class="remove" v-on:click="removeContactHistory(index)">
           <svg class="icon" aria-hidden="true">
@@ -31,8 +31,8 @@ export default {
   methods: {
     addContactHistory() {
       this.contacts.push({
-        name: "",
-        content: ""
+        phone: "",
+        email: ""
       });
     },
     removeContactHistory(index) {
